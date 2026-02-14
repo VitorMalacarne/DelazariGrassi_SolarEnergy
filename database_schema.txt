@@ -5,7 +5,6 @@ CLIENTE
            ├── SISTEMA_UC
            ├── SISTEMA_INVERSOR
            └── SISTEMA_PAINEL
-
 TB_CLIENTE
 ---------
 CLI_ID (PK)

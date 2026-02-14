@@ -3,6 +3,6 @@
 return [
     'host'     => 'localhost',
     'dbname'   => 'solar_system',
-    'user'     => 'root',
-    'password' => ''
+    'user'     => 'solar_user',
+    'password' => 'senha_forte_aqui'
 ];
