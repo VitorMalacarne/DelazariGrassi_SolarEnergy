@@ -1,21 +1,30 @@
+<?php
+$pageTitle = $pageTitle ?? 'SolarFlow';
+$page = $page ?? 'dashboard';
+?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Sistema Solar</title>
-    <style>
-        body { font-family: Arial; margin: 0; }
-        aside { width: 200px; float: left; background: #eee; height: 100vh; padding: 15px; }
-        main { margin-left: 220px; padding: 20px; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border-bottom: 1px solid #ccc; padding: 8px; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?= htmlspecialchars($pageTitle); ?> | SolarFlow</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/<?= htmlspecialchars($page); ?>.css">
 </head>
-<body>
-
-<aside>
-    <h3>Menu</h3>
-    <a href="/?controller=customer">Clientes</a>
-</aside>
-
-<main>
+<body class="page-<?= htmlspecialchars($page); ?>">
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <h1>SolarFlow</h1>
+            <p>Prototipo visual de gestao</p>
+        </div>
+        <nav>
+            <a class="nav-link <?= $page === 'dashboard' ? 'active' : ''; ?>" href="?page=dashboard">Dashboard</a>
+            <a class="nav-link <?= $page === 'clientes' ? 'active' : ''; ?>" href="?page=clientes">Clientes</a>
+            <a class="nav-link <?= $page === 'sistemas' ? 'active' : ''; ?>" href="?page=sistemas">Sistemas FV</a>
+            <a class="nav-link <?= $page === 'ucs' ? 'active' : ''; ?>" href="?page=ucs">Unidades Consumidoras</a>
+            <a class="nav-link <?= $page === 'documentos' ? 'active' : ''; ?>" href="?page=documentos">Documentos</a>
+            <a class="nav-link <?= $page === 'usuarios' ? 'active' : ''; ?>" href="?page=usuarios">Usuarios</a>
+        </nav>
+    </aside>
+    <main class="content">
